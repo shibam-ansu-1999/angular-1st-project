@@ -1,0 +1,64 @@
+
+.container{
+    height: 100vh;
+    padding: 3vh;
+}
+.form-sec {
+    width: 50vw;
+    padding: 0.7vh;
+    background-color: aliceblue;
+    box-shadow: 0 0 4px #ccc;
+    margin: auto;
+}
+
+.form-sec h6 {
+    font-size: smaller;
+    margin-top: -1vh;
+    margin-bottom: 1vh;
+}
+
+form {
+    padding-left: 1vw;
+}
+
+nav {
+    background: rgba(186, 250, 255, 0.76);
+    height: 6vh;
+    padding-top: 1vh;
+    padding-left: 2vw;
+}
+
+#from-fill {
+    padding-left: 6vw;
+    background-color: rgb(224, 244, 247);
+    padding: 15px;
+}
+
+.label {
+    text-align: right;
+}
+
+.from-control {
+    height: 5.5vh;
+}
+
+textarea {
+    height: 20vh;
+}
+
+@media (min-width: 768px) and (max-width: 1124px) {
+    .form-sec {
+        width: 80%;
+        height: 200vh;
+    }
+}
+
+@media (max-width: 767px) {
+    .form-sec {
+        width: 100%;
+    }
+
+    .label {
+        text-align: left;
+    }
+}

@@ -1,0 +1,80 @@
+<section>
+    <div class="container">
+
+        <div class="form-sec">
+            <h6>Hi There, How can I help you?</h6>
+
+            <form #queryForm="ngForm" (ngSubmit)="onSubmit(queryForm)" novalidate>
+                <nav>
+                    <h5>
+                        <i class="far fa-envelope mr-3"></i>
+                        SEND US YOUR QUERY
+                    </h5>
+                </nav>
+                {{queryForm.value | json}}
+                <div id="from-fill">
+                    <div class="form-group row">
+                        <div class="col-md-3 label">Email Address:</div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            <input type="email" required email class="form-control" #email="ngModel"
+                                [class.is-invalid]="email.invalid && email.touched" placeholder="abc@gmail.com"
+                                name="email" ngModel>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-3 label">Contact NO:</div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" required minlength="10" maxlength="10"
+                                [class.is-invalid]="contact.invalid && contact.touched" pattern="^[0-9]+$"
+                                #contact="ngModel" placeholder="9999999999" name="phnNo" ngModel>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 label">Issue Type:</div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            <select name="queryType" id="issues" class="col-md-12 form-control" ngModel>
+                                <option value="Order">Order</option>
+                                <option value="Return_Refund">Return & Refund</option>
+                                <option value="Price">Price</option>
+                                <option value="Product">Product</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-3 label">Query:</div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            <textarea name="query" class="form-control" id="iq" placeholder="Enter your Issues/query"
+                                ngModel></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            <div class="g-recaptcha brochure__form__captcha" id="captcha"
+                                data-sitekey="6LellBAaAAAAACEeZ5ABRGWLuPrTjr8QeQf5yxbI"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<div style="margin-bottom: 2em;margin-top: 0vh;text-align: center;">
+    <button (click)="getCustomerQuery()" class="btn btn-info btn-lg">Get Customer Query</button>
+</div>
